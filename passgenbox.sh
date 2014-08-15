@@ -1,10 +1,11 @@
 #!/bin/bash
 # pass-gen
-echo "Welcome to the password matrix"
-echo "------------------------------"
+echo "Welcome to the password box"
 #echo "Bash version ${BASH_VERSION}..."
 wits=99
 while [ $wits -ne 0 ]
+	bits=0
+	its=1
 	do
 		echo "You can shake the box and see how many passwords fall out," 
 		echo "or "
@@ -45,9 +46,8 @@ while [ $wits -ne 0 ]
 								scuff=$RANDOM 
 								let "guff=$cuff*$scuff"
 								echo $cuff $scuff  | base64
-								echo $guff | base64
-								echo $guff | base64 |base64
-								#echo $guff | openssl enc -base64
+								echo $guff | base64 | base64
+								echo $guff | openssl enc -base64
 								
 							done
 				fi
